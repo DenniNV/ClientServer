@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DataConnection : MonoBehaviour
 {
-   DataBaseConnectionPHP _connectionPHP = new DataBaseConnectionPHP();
+     DataBaseConnectionPHP _connectionPHP = new DataBaseConnectionPHP();
     void Start()
     {
+        Connection(_connectionPHP);
     }
 
     private void Connection(IDataBaseConnection  dataBase)
     {
-        dataBase.Connection();
+       StartCoroutine( dataBase.Connection());
 
     }
 }

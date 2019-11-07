@@ -73,9 +73,13 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
+    <Compile Include="Assets\Resources\DataBase\DataBaseAddUsers.cs" />
     <Compile Include="Assets\Resources\DataBase\DataBaseConnectionPHP.cs" />
+    <Compile Include="Assets\Resources\DataBase\DataBaseLoginUsers.cs" />
     <Compile Include="Assets\Resources\DataBase\DataConnection.cs" />
     <Compile Include="Assets\Resources\DataBase\IDataBaseConnection.cs" />
+    <Compile Include="Assets\Resources\Scripts\Loging.cs" />
+    <Compile Include="Assets\Resources\Scripts\Registration.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />

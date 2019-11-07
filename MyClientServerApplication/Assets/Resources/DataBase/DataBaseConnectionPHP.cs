@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class DataBaseConnectionPHP : MonoBehaviour, IDataBaseConnection 
 {
-    public Text t;
     public IEnumerator Connection()
     {
         WWWForm form = new WWWForm();
         form.AddField("W","S");
-        UnityWebRequest download = UnityWebRequest.Post("https://denisnvgames.000webhostapp.com/index.php", form);
+        UnityWebRequest download = UnityWebRequest.Post("https://denisnvgames.000webhostapp.com/SelectUsers.php", form);
         yield return download.SendWebRequest();
         if (download.isNetworkError || download.isHttpError)
         {
@@ -21,10 +20,7 @@ public class DataBaseConnectionPHP : MonoBehaviour, IDataBaseConnection
             print(download.downloadHandler.text);
         }
     }
-    private void Start()
-    {
-        StartCoroutine(Connection());
-    }
+  
 
 
 }
