@@ -1,13 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Loging : MonoBehaviour
 {
-    DataBaseLoginUsers loginUsers = new DataBaseLoginUsers();
+    private DataBaseLoginUsers _loginUsers = new DataBaseLoginUsers();
+    [SerializeField]
+    private InputField _loginInput;
+    [SerializeField]
+    private InputField _passwordInput;
+    [SerializeField]
+    private Button _buttonOk;
+    [SerializeField]
+    private Text _logText;
 
     private void Start()
     {
-        loginUsers.CheckUser("Laura11", "vfhrtnbyusss");
+        _buttonOk.onClick.AddListener(() => LogingUsers());
     }
+    private void LogingUsers()
+    {
+
+        if(_loginInput.text != " " && _passwordInput.text != " ")
+        {
+            _logText.text = _loginUsers.CheckUser(_loginInput.text, _passwordInput.text);
+                    
+
+        }
+
+    }
+
+
+
 }

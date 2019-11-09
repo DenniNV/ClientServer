@@ -6,8 +6,9 @@ using UnityEngine.Networking;
 public class DataBaseLoginUsers 
 {
     readonly string url = "https://denisnvgames.000webhostapp.com/ChekoutUsers.php";
-
-    public void CheckUser(string userName, string password)
+    private  string _error = "Error you login or password false";
+    private string _sucsess = "Ok comrad";
+    public string CheckUser(string userName, string password)
     {
         WWWForm form = new WWWForm();
 
@@ -17,13 +18,14 @@ public class DataBaseLoginUsers
         Add.SendWebRequest();
         if (Add.isNetworkError || Add.isHttpError)
         {
-            Debug.Log("Error downloading: " + Add.error);
+            return _error;
         }
         else
         {
-            Debug.Log(Add.downloadHandler.text);
+            return _sucsess;
         }
 
     }
+    
 
 }
