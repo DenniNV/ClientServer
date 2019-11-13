@@ -21,11 +21,19 @@ public class DataBaseLoginUsers
         form.AddField("userPasswordCheck", password);
         UnityWebRequest Add = UnityWebRequest.Post(url, form);
         yield return Add.SendWebRequest();
-        if (Add.isNetworkError || Add.isHttpError)
+        if (Add.isNetworkError)
         {
             _error = "";
             LoginError(Add.downloadHandler.text);
             Debug.Log(Add.downloadHandler.text);
+        }
+        else if (Add.isHttpError)
+        {
+            _error = "";
+            LoginError(Add.downloadHandler.text);
+            Debug.Log(Add.downloadHandler.text);
+
+
         }
         else
         {

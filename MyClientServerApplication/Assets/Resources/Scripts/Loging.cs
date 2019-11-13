@@ -7,6 +7,7 @@ public class Loging : MonoBehaviour
 {
     private DataBaseLoginUsers _loginUsers = new DataBaseLoginUsers();
     private CheckerIputData _inputData = new CheckerIputData();
+    private ControllerPanels _controllerPanels;
     [SerializeField]
     private InputField _loginInput;
     [SerializeField]
@@ -24,7 +25,9 @@ public class Loging : MonoBehaviour
     {
         _buttonOk.onClick.AddListener(() => LogingUsers());
         _buttonErrorOk.onClick.AddListener(() => ClosePanelError());
+        _controllerPanels = GetComponentInParent<ControllerPanels>();
     }
+
     private void LogingUsers()
     {
         _logText.text = "";
@@ -32,6 +35,10 @@ public class Loging : MonoBehaviour
         {
             StartCoroutine(_loginUsers.CheckUser(_loginInput.text, _passwordInput.text));
             _errorPanel.SetActive(true);
+            if(_loginUsers.Error == " ")
+            {
+                _logText.text = "Камрад ты проверь интернет и попробуй занов";
+            }
             _logText.text = _loginUsers.Error;
         }
         else
@@ -42,7 +49,6 @@ public class Loging : MonoBehaviour
     }
     private void ClosePanelError()
     {
-
         _errorPanel.SetActive(false);
     }
 
