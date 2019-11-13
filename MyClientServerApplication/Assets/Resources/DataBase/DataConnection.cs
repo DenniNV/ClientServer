@@ -5,7 +5,7 @@ using UnityEngine;
 public class DataConnection : MonoBehaviour
 {
      DataBaseConnectionPHP _connectionPHP = new DataBaseConnectionPHP();
-    void Start()
+    void Awake()
     {
         Connection(_connectionPHP);
     }

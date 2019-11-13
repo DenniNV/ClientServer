@@ -24,7 +24,6 @@ public class Registration : MonoBehaviour
 
     private void Rigistration()
     {
-
         if(_checker.CheckUserName(_login.text) && _checker.CheckUserPassword(_password.text) &&_checker.CheckUserEmail(_email.text))
         {
             _addUsers.Connection(_login.text, _password.text, _email.text);
@@ -36,9 +35,7 @@ public class Registration : MonoBehaviour
         {
              _bugText.text = _checker.ErrorInputData(_login.text, _password.text, _email.text);
 
-
         }
-        
 
     }
 
