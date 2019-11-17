@@ -29,7 +29,7 @@ public class DataBaseAddUsers
             if (Add.downloadHandler.text == "this login use")
             {
 
-                _error = "Камрад такой логин уже используют";
+                _error = "Камрад такой логин или Email уже используют";
                 _registrationOk = false;
             }
             else _registrationOk = true;

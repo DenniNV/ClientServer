@@ -17,4 +17,4 @@ MonoBehaviour:
   RewardGoldTooth: 0
   RewardExp: 0
   RandomReward: 0
-  Image: {fileID: 0}
+  Image: {fileID: -3522954922327724127, guid: e8f70537e5e0c51409b2a2fcf7c2f79d, type: 3}

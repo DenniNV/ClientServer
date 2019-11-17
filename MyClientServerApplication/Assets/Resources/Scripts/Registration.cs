@@ -28,6 +28,7 @@ public class Registration : MonoBehaviour
     {
         if(_checker.CheckUserName(_login.text) && _checker.CheckUserPassword(_password.text) &&_checker.CheckUserEmail(_email.text))
         {
+            _bugText.text = "";
              StartCoroutine( _addUsers.Connection(_login.text, _password.text, _email.text));
             _login.text = "";
             _password.text = "";

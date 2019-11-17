@@ -84,6 +84,7 @@
     <Compile Include="Assets\Resources\Scripts\ControllerPanels.cs" />
     <Compile Include="Assets\Resources\Scripts\Loging.cs" />
     <Compile Include="Assets\Resources\Scripts\Registration.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\OpenProgressBar.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
     <None Include="Assets\Photon\PhotonLibs\changes-library.txt" />
