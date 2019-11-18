@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Loging : MonoBehaviour
 {
+    private DataBaseLoadGameData gameData = new DataBaseLoadGameData();
     private DataBaseLoginUsers _loginUsers = new DataBaseLoginUsers();
     private CheckerIputData _inputData = new CheckerIputData();
     private ControllerPanels _controllerPanels;
@@ -34,18 +35,12 @@ public class Loging : MonoBehaviour
         if (_inputData.CheckUserName(_loginInput.text) && _inputData.CheckUserPassword(_passwordInput.text))
         {
             StartCoroutine(_loginUsers.CheckUser(_loginInput.text, _passwordInput.text));
+            StartCoroutine(gameData.LoadGameData(_loginUsers.UserLoadName));
             _errorPanel.SetActive(true);
-            if(_loginUsers.Error == " ")
-            {
-                _logText.text = "Камрад ты проверь интернет и попробуй занов";
-            }
-            _logText.text = _loginUsers.Error;
+           
         }
-        else
-        {
-            _errorPanel.SetActive(true);
-            _logText.text = "Камрад ты ввел неправильные данные";
-        }
+      
+           
     }
     private void ClosePanelError()
     {

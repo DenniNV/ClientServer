@@ -9,6 +9,8 @@ public class Registration : MonoBehaviour
     [SerializeField]
     private Button _registrationOnClick;
     [SerializeField]
+    private Button _loginOnClick;
+    [SerializeField]
     private InputField _login;
     [SerializeField]
     private InputField _password;
@@ -22,13 +24,13 @@ public class Registration : MonoBehaviour
     {
         _registrationOnClick.onClick.AddListener(() => Rigistration());
         _controllerPanels = GetComponentInParent<ControllerPanels>();
+        _loginOnClick.onClick.AddListener(() => OpenLoginPanel());
     }
 
     private void Rigistration()
     {
         if(_checker.CheckUserName(_login.text) && _checker.CheckUserPassword(_password.text) &&_checker.CheckUserEmail(_email.text))
         {
-            _bugText.text = "";
              StartCoroutine( _addUsers.Connection(_login.text, _password.text, _email.text));
             _login.text = "";
             _password.text = "";
@@ -44,8 +46,16 @@ public class Registration : MonoBehaviour
         else
         {
              _bugText.text = _checker.ErrorInputData(_login.text, _password.text, _email.text);
+
         }
     }
+
+    private void OpenLoginPanel()
+    {
+        _controllerPanels._loginPanel.SetActive(true);
+        gameObject.SetActive(false);
+    }
+    
 
 
 

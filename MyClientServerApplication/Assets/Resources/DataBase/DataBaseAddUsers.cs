@@ -19,22 +19,21 @@ public class DataBaseAddUsers
         yield return Add.SendWebRequest();
         if (Add.isNetworkError|| Add.isHttpError)
         {
-
             Debug.Log("You have errors");
         }
         else
         {
-
-
-            if (Add.downloadHandler.text == "this login use")
+            Debug.Log(Add.downloadHandler.text);
+            _error = Add.downloadHandler.text;
+            if (Add.downloadHandler.text == "You registation")
             {
-
+                _registrationOk = true;
+            }
+            else
+            {
                 _error = "Камрад такой логин или Email уже используют";
                 _registrationOk = false;
             }
-            else _registrationOk = true;
-
-
         }
        
 

@@ -9,9 +9,11 @@ public class DataBaseLoginUsers
     readonly string url = "https://denisnvgames.000webhostapp.com/ChekoutUsers.php";
     private  string _error = "";
     private string _successful = "";
-
+    private string _userLoadName = "";
+    
     public string Error { get => _error;}
     public string Successful { get => _successful;}
+    public string UserLoadName { get => _userLoadName;}
 
     public IEnumerator CheckUser(string userName, string password)
     {
@@ -37,10 +39,12 @@ public class DataBaseLoginUsers
         }
         else
         {
-            LoginError(Add.downloadHandler.text);
             if(Add.downloadHandler.text == "Come in comrade")
             {
-                LoginSuccessful();
+                LoginError(Add.downloadHandler.text);
+                _userLoadName = userName;
+               // LoginSuccessful();
+
             }
         }
 
