@@ -10,40 +10,44 @@ public class DataBaseLoginUsers
     private  string _error = "";
     private string _successful = "";
     private string _userLoadName = "";
-    
+    private UnityWebRequest _add;
     public string Error { get => _error;}
     public string Successful { get => _successful;}
     public string UserLoadName { get => _userLoadName;}
+    public UnityWebRequest Add { get => _add; }
 
     public IEnumerator CheckUser(string userName, string password)
     {
-        WWWForm form = new WWWForm();
+        var form = new WWWForm();
 
         form.AddField("userNameCheck", userName);
         form.AddField("userPasswordCheck", password);
-        UnityWebRequest Add = UnityWebRequest.Post(url, form);
-        yield return Add.SendWebRequest();
-        if (Add.isNetworkError)
+        _add =  UnityWebRequest.Post(url, form);
+        yield return _add.SendWebRequest();
+        if (_add.isNetworkError)
         {
             _error = "";
-            LoginError(Add.downloadHandler.text);
-            Debug.Log(Add.downloadHandler.text);
+            LoginError(_add.downloadHandler.text);
+            Debug.Log(_add.downloadHandler.text);
         }
-        else if (Add.isHttpError)
+        else if (_add.isHttpError)
         {
             _error = "";
-            LoginError(Add.downloadHandler.text);
-            Debug.Log(Add.downloadHandler.text);
+            LoginError(_add.downloadHandler.text);
+            Debug.Log(_add.downloadHandler.text);
 
 
         }
         else
         {
-            if(Add.downloadHandler.text == "Come in comrade")
+            if(_add.downloadHandler.text == "Come in comrade")
             {
-                LoginError(Add.downloadHandler.text);
+                LoginError(_add.downloadHandler.text);
                 _userLoadName = userName;
-               // LoginSuccessful();
+                if (_add.downloadProgress == 1)
+                {
+                  //  LoginSuccessful();
+                }
 
             }
         }
