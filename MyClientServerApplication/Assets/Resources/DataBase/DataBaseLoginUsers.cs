@@ -44,11 +44,6 @@ public class DataBaseLoginUsers
             {
                 LoginError(_add.downloadHandler.text);
                 _userLoadName = userName;
-                if (_add.downloadProgress == 1)
-                {
-                  //  LoginSuccessful();
-                }
-
             }
         }
 
@@ -56,7 +51,7 @@ public class DataBaseLoginUsers
 
 
 
-    private void LoginSuccessful()
+    public void LoginSuccessful()
     {
         SceneManager.LoadScene(1);
     }

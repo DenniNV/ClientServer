@@ -84,9 +84,12 @@
     <Compile Include="Assets\Resources\Scripts\CheckerIputData.cs" />
     <Compile Include="Assets\Resources\Scripts\ControllerPanels.cs" />
     <Compile Include="Assets\Resources\Scripts\DontDestroyObjects.cs" />
+    <Compile Include="Assets\Resources\Scripts\EnergyView.cs" />
+    <Compile Include="Assets\Resources\Scripts\Load.cs" />
     <Compile Include="Assets\Resources\Scripts\LoadData.cs" />
     <Compile Include="Assets\Resources\Scripts\Loging.cs" />
     <Compile Include="Assets\Resources\Scripts\Registration.cs" />
+    <Compile Include="Assets\Resources\Scripts\Save.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\OpenProgressBar.cs" />
     <None Include="Assets\Photon\PhotonUnityNetworking\link.xml" />
     <None Include="Assets\Photon\PhotonLibs\Photon3Unity3D.xml" />
