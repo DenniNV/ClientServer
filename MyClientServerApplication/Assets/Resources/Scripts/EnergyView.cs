@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnergyView : MonoBehaviour
 {
     //TODO
-    private int _energynow = 20;
+    private int _energynow = 0;
     public int MaxEnergy { set => _maxEnergy = value; get => _maxEnergy; }
     private int _maxEnergy = 100;
     [SerializeField]
@@ -22,11 +22,14 @@ public class EnergyView : MonoBehaviour
 
     IEnumerator EnergyReplenishment()
     {
-        yield return new WaitForSecondsRealtime(60);
-        if(_energynow <_maxEnergy)
+        while (true)
         {
-            _energynow++;
-            UpEnegy?.Invoke();
+            yield return new WaitForSecondsRealtime(60);
+            if (_energynow < _maxEnergy)
+            {
+                _energynow++;
+                UpEnegy?.Invoke();
+            }
         }
     }
     private void Awake()

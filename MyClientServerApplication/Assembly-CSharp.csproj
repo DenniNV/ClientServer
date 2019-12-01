@@ -91,12 +91,16 @@
     <Compile Include="Assets\Resources\Scripts\IUpdaterGameData.cs" />
     <Compile Include="Assets\Resources\Scripts\LevelView.cs" />
     <Compile Include="Assets\Resources\Scripts\Load.cs" />
+    <Compile Include="Assets\Resources\Scripts\LoadBossGameData.cs" />
     <Compile Include="Assets\Resources\Scripts\LoadData.cs" />
-    <Compile Include="Assets\Resources\Scripts\LoadGameObjectData.cs" />
+    <Compile Include="Assets\Resources\Scripts\LoadDistrictData.cs" />
+    <Compile Include="Assets\Resources\Scripts\LoadDistrictGameData.cs" />
     <Compile Include="Assets\Resources\Scripts\LoadGaneData.cs" />
     <Compile Include="Assets\Resources\Scripts\Loging.cs" />
     <Compile Include="Assets\Resources\Scripts\Registration.cs" />
     <Compile Include="Assets\Resources\Scripts\Save.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\OpenBossPanel.cs" />
+    <Compile Include="Assets\Resources\Scripts\UI\OpenDistricts.cs" />
     <Compile Include="Assets\Resources\Scripts\UI\OpenProgressBar.cs" />
     <Compile Include="Assets\Resources\Scripts\UpdateBossKill.cs" />
     <Compile Include="Assets\Resources\Scripts\UpdateGoldCoins.cs" />

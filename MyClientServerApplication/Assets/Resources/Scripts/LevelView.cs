@@ -13,4 +13,7 @@ public class LevelView : MonoBehaviour
     {
         _percentageRatio.text = _levelBar.size *100 +"% " + " / " + "100%";
     }
+
+
+
 }

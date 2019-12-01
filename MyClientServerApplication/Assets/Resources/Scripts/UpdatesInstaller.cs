@@ -11,6 +11,7 @@ public class UpdatesInstaller : MonoInstaller
     public UpdateGoldCoins GoldCoins;
     public UpdateBossKill BossKill;
     public UpdateGooldTooth GooldTooth;
+
     public override void InstallBindings()
     {
         Container.BindInstance(UpdateLevel).AsSingle();
