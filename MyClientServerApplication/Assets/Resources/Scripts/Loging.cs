@@ -22,25 +22,29 @@ public class Loging : MonoBehaviour
     [SerializeField]
     private GameObject _errorPanel;
 
+
     private void Start()
     {
         _buttonOk.onClick.AddListener(() => LogingUsers());
         _buttonErrorOk.onClick.AddListener(() => ClosePanelError());
         _controllerPanels = GetComponentInParent<ControllerPanels>();
+        _loginUsers.LoadEnd += LoadUserData;
     }
+
 
     private void LogingUsers()
     {
-        _logText.text = "";
         if (_inputData.CheckUserName(_loginInput.text) && _inputData.CheckUserPassword(_passwordInput.text))
         {
             StartCoroutine(_loginUsers.CheckUser(_loginInput.text, _passwordInput.text));
-            StartCoroutine(gameData.LoadGameData(_loginUsers.UserLoadName));
-            _errorPanel.SetActive(true);
-           
         }
       
            
+    }
+    private void LoadUserData()
+    {
+
+        StartCoroutine(gameData.LoadGameData(_loginUsers.UserLoadName));
     }
     private void ClosePanelError()
     {

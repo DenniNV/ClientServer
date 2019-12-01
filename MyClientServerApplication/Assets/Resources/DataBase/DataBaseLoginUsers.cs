@@ -15,6 +15,8 @@ public class DataBaseLoginUsers
     public string Successful { get => _successful;}
     public string UserLoadName { get => _userLoadName;}
     public UnityWebRequest Add { get => _add; }
+    public delegate void Load();
+    public event Load LoadEnd;
 
     public IEnumerator CheckUser(string userName, string password)
     {
@@ -35,8 +37,6 @@ public class DataBaseLoginUsers
             _error = "";
             LoginError(_add.downloadHandler.text);
             Debug.Log(_add.downloadHandler.text);
-
-
         }
         else
         {
@@ -44,6 +44,14 @@ public class DataBaseLoginUsers
             {
                 LoginError(_add.downloadHandler.text);
                 _userLoadName = userName;
+                if (PlayerPrefs.HasKey("UserLogin"))
+                {
+
+                    PlayerPrefs.DeleteKey("UserLogin");
+                }
+                PlayerPrefs.SetString("UserLogin", userName);
+                LoadEnd?.Invoke();
+
             }
         }
 
