@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BossFigthController
     - Bosses
     - ControllerPanels
     - EnergyView
@@ -19,6 +20,7 @@ ScriptsOnlyBuild:
     - UpdateSilver
     - UpdateUserData
     - UpdatesInstaller
+    - ViewWeaponCount
     PhotonUnityNetworking.Demos.dll:
     - Photon.Pun.Demo.Asteroids.Asteroid
     - Photon.Pun.Demo.Asteroids.Bullet
@@ -115,33 +117,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9616}
     - Class: 114
-      Script: {instanceID: 9946}
+      Script: {instanceID: 9802}
     - Class: 114
-      Script: {instanceID: 10054}
+      Script: {instanceID: 9948}
     - Class: 114
-      Script: {instanceID: 10266}
+      Script: {instanceID: 10056}
     - Class: 114
-      Script: {instanceID: 10472}
+      Script: {instanceID: 10144}
+    - Class: 114
+      Script: {instanceID: 10270}
     - Class: 114
       Script: {instanceID: 10478}
     - Class: 114
-      Script: {instanceID: 10534}
+      Script: {instanceID: 10484}
     - Class: 114
-      Script: {instanceID: 10626}
+      Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10682}
+      Script: {instanceID: 10604}
     - Class: 114
-      Script: {instanceID: 10806}
+      Script: {instanceID: 10634}
     - Class: 114
-      Script: {instanceID: 11152}
+      Script: {instanceID: 10690}
     - Class: 114
-      Script: {instanceID: 11228}
+      Script: {instanceID: 10814}
     - Class: 114
-      Script: {instanceID: 33698}
+      Script: {instanceID: 11160}
     - Class: 114
-      Script: {instanceID: 80382}
+      Script: {instanceID: 11236}
     - Class: 114
-      Script: {instanceID: 80388}
+      Script: {instanceID: 20826}
+    - Class: 114
+      Script: {instanceID: 164228}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -242,41 +248,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9758}
     - Class: 114
-      Script: {instanceID: 9818}
+      Script: {instanceID: 9820}
     - Class: 114
-      Script: {instanceID: 9910}
+      Script: {instanceID: 9912}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10266}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10622}
+      Script: {instanceID: 10630}
     - Class: 114
-      Script: {instanceID: 10676}
+      Script: {instanceID: 10684}
     - Class: 114
-      Script: {instanceID: 10776}
+      Script: {instanceID: 10784}
     - Class: 114
-      Script: {instanceID: 10840}
+      Script: {instanceID: 10848}
     - Class: 114
-      Script: {instanceID: 10912}
+      Script: {instanceID: 10920}
     - Class: 114
-      Script: {instanceID: 10926}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11136}
-    - Class: 114
-      Script: {instanceID: 11166}
+      Script: {instanceID: 11144}
     - Class: 114
       Script: {instanceID: 11174}
     - Class: 114
       Script: {instanceID: 11182}
     - Class: 114
-      Script: {instanceID: 11462}
+      Script: {instanceID: 11190}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11470}
     - Class: 114
-      Script: {instanceID: 11914}
+      Script: {instanceID: 11812}
+    - Class: 114
+      Script: {instanceID: 11922}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -946,6 +952,12 @@ ScriptsOnlyBuild:
     className: ConnectAndJoinRandomLb
   - hash:
       serializedVersion: 2
+      Hash: 420d4e2f92912814d622eeec0c4e49c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenBossPanel
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1120,6 +1132,12 @@ ScriptsOnlyBuild:
     className: PunCockpitEmbed
   - hash:
       serializedVersion: 2
+      Hash: 420d4e2f92912814d622eeec0c4e49c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpenDistricts
+  - hash:
+      serializedVersion: 2
       Hash: 303ad70ce203ad874efe2965d0fbcff9
     assemblyName: Unity.Analytics.Tracker.dll
     namespaceName: UnityEngine.Analytics
@@ -1180,7 +1198,7 @@ ScriptsOnlyBuild:
     className: PlayerControl
   - hash:
       serializedVersion: 2
-      Hash: c1f8b58a00f8e05be63821a0f7ac167a
+      Hash: fadf00c2d86f8bd617a00b24d2269f9a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LoadBossGameData
@@ -1358,6 +1376,12 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkManager
+  - hash:
+      serializedVersion: 2
+      Hash: f6c78bf745e675bceb1fa5cf9cf43ec2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LoadDistrictGameData
   - hash:
       serializedVersion: 2
       Hash: 42c6852ad60d41ec965f75f396f1fb79
@@ -2146,22 +2170,22 @@ ScriptsOnlyBuild:
     className: ZenjectBinding
   - hash:
       serializedVersion: 2
-      Hash: f6c78bf745e675bceb1fa5cf9cf43ec2
+      Hash: b15ef17f39aedc208c68f15b195afc02
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: LoadDistrictGameData
+    className: ViewWeaponCount
   - hash:
       serializedVersion: 2
-      Hash: 420d4e2f92912814d622eeec0c4e49c2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: OpenDistricts
+    className: BossFigthController
   - hash:
       serializedVersion: 2
-      Hash: 420d4e2f92912814d622eeec0c4e49c2
+      Hash: 49019864eaafa224d3ef7a75b6e0b66e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: OpenBossPanel
+    className: GameInstaller
   platform: 19
   scenePathNames:
   - Assets/Scenes/Main.unity

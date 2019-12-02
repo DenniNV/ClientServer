@@ -46,7 +46,6 @@ public class DataBaseLoginUsers
                 _userLoadName = userName;
                 if (PlayerPrefs.HasKey("UserLogin"))
                 {
-
                     PlayerPrefs.DeleteKey("UserLogin");
                 }
                 PlayerPrefs.SetString("UserLogin", userName);
