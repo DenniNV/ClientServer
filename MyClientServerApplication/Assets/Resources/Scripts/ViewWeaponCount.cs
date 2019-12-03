@@ -27,7 +27,7 @@ public class ViewWeaponCount : MonoBehaviour
             _countSecondWeapon.text = PlayerPrefs.GetString("Weapon" + 1);
             _countThreeWeapon.text= PlayerPrefs.GetString("Weapon" + 2);
             _countFourWeapon.text = PlayerPrefs.GetString("Weapon" + 3);
-        _countFiveWeapon.text = PlayerPrefs.GetString("Weapon" + 4);
+            _countFiveWeapon.text = PlayerPrefs.GetString("Weapon" + 4);
     }
     private void Load()
     {
@@ -45,32 +45,44 @@ public class ViewWeaponCount : MonoBehaviour
     [SerializeField]
     private Text _bossName;
     [SerializeField]
-    private Text _rewardExp;
+    private Text _rewardExpText;
     [SerializeField]
     private Text _rewardGoldTooth;
     [SerializeField]
     private Text _rewardGoldCoin;
 
-
+    private int _rewardTooth;
+    private int _rewardCoin;
+    private int _rewardExp;
+    public int RewardCoin { get => _rewardCoin; }
+    public delegate void FightEvent();
+    public event FightEvent YouWin;
+    public event FightEvent StartFight;
 
     
     
     public void LoadImage(LoadBossGameData loadBoss)
     {
         _bossImage.sprite = loadBoss.BossImage();
-
         _hp.text = loadBoss.Hp;
         _bossName.text = loadBoss.BossName.text;
         _attackPanel.SetActive(true);
-        _rewardExp.text = loadBoss.Exp.ToString();
+         StartFight?.Invoke();
+        _rewardExpText.text = loadBoss.Exp.ToString();
         _rewardGoldTooth.text = loadBoss.GoldTooth.ToString();
         _rewardGoldCoin.text = loadBoss.GoldCoin.ToString();
+        _rewardTooth = loadBoss.GoldCoin;
+        _rewardExp = Convert.ToInt32(loadBoss.Hp);
     }
 
     public void Punch(int damage)
     {
         int Hp = Convert.ToInt32(_hp.text);
         _hp.text  = (Hp - damage).ToString();
+        if (Hp <= 0)
+        {
+            YouWin?.Invoke();
+        }
     }
 
 }

@@ -7,13 +7,23 @@ using Zenject;
 public class BossFigthController : MonoBehaviour
 {
 
-   private ViewWeaponCount _weaponCount;
-   private Weapon  _weapon = new Weapon();
+    private ViewWeaponCount _weaponCount;
+    private Weapon _weapon = new Weapon();
+    [SerializeField]
+    private GameObject _panelWin;
+    [SerializeField]
+    private GameObject _panelLose;
+    [SerializeField]
+    private GameObject _attackPanel;
     
-
-    private void Start()
+    private void Awake()
     {
         _weaponCount = GetComponent<ViewWeaponCount>();
+    }
+    private void Start()
+    {
+        _weaponCount.YouWin += EndFight;
+        _weaponCount.StartFight += StartFight;
     }
 
     public void Damage1()
@@ -56,15 +66,20 @@ public class BossFigthController : MonoBehaviour
 
     public void StartFight()
     {
-
+        StartCoroutine(Fight());
 
     }
 
     IEnumerator Fight()
     {
+        yield return new WaitForSecondsRealtime(60);
+        _panelLose.SetActive(true);
+        _attackPanel.SetActive(false);
+    }
 
-        yield return new WaitForSecondsRealtime(10);
-        
-
+    private void EndFight()
+    {
+        _panelWin.SetActive(true);
+        _attackPanel.SetActive(false);
     }
 }
